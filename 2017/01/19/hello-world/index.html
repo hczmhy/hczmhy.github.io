@@ -102,7 +102,7 @@ http://localhost:8080/solr     可以访问。OK。">
 2.放到 tomcat的 webapps 文件夹下（tomcat官网自行下载）
 3.运行  bin/startup.bat,
 http://localhost:8080/solr     可以访问。OK。">
-<meta property="og:updated_time" content="2017-01-23T12:35:37.634Z">
+<meta property="og:updated_time" content="2017-01-23T12:38:18.440Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="solr从服务器配置整合到项目实战">
 <meta name="twitter:description" content="一：下载solr，版本为5.2.1
@@ -436,13 +436,13 @@ http://localhost:8080/solr     可以访问。OK。">
 <p>配置完成！</p>
 <p>四、新建项目调用测试。</p>
 <p>1.新建一个maven 项目</p>
-<p>pom.xml<br>复制代码</p>
+<p>pom.xml</p>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"><br>    <modelversion>4.0.0</modelversion><br>    <groupid>com.masz.solr</groupid><br>    <artifactid>solrj</artifactid><br>    <version>0.0.1-SNAPSHOT</version><br><br>    <dependencies><br><br>        <dependency><br>            <groupid>org.apache.solr</groupid><br>            <artifactid>solr-solrj</artifactid><br>            <version>5.0.0</version><br>        </dependency><br><br>        <dependency><br>            <groupid>org.slf4j</groupid><br>            <artifactid>slf4j-simple</artifactid><br>            <version>1.5.6</version><br>        </dependency><br><br>        <dependency><br>            <groupid>javax.servlet</groupid><br>            <artifactid>servlet-api</artifactid><br>            <version>2.5</version><br>        </dependency><br>        <dependency><br>            <groupid>log4j</groupid><br>            <artifactid>log4j</artifactid><br>            <version>1.2.16</version><br>        </dependency><br>        <dependency><br>            <groupid>commons-logging</groupid><br>            <artifactid>commons-logging</artifactid><br>            <version>1.2</version><br>        </dependency><br><br>        <dependency><br>            <groupid>junit</groupid><br>            <artifactid>junit</artifactid><br>            <version>4.9</version><br>            <scope>compile</scope><br>        </dependency><br><br>    </dependencies><br><br></project>
 
 
 
 <p>2.测试代码</p>
-<p>SolrTest.java<br>复制代码</p>
+<p>SolrTest.java</p>
 <p>import java.io.IOException;</p>
 <p>import org.apache.solr.client.solrj.SolrQuery;<br>import org.apache.solr.client.solrj.SolrServerException;<br>import org.apache.solr.client.solrj.impl.HttpSolrClient;<br>import org.apache.solr.client.solrj.response.QueryResponse;<br>import org.apache.solr.client.solrj.response.UpdateResponse;<br>import org.apache.solr.common.SolrDocument;<br>import org.apache.solr.common.SolrDocumentList;<br>import org.apache.solr.common.SolrInputDocument;<br>import org.junit.Before;<br>import org.junit.Test;</p>
 <p>public class SolrTest {</p>
