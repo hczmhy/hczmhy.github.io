@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hello," />
+  <meta name="keywords" content="solr实战," />
 
 
 
@@ -84,13 +84,34 @@
 
 
 
+<meta name="description" content="一：下载solr，版本为5.2.1
+地址:http://pan.baidu.com/s/1eRAdk3o
+解压出来。
+1.在解压的文件夹路径： /server/webapps/solr.war
+2.放到 tomcat的 webapps 文件夹下（tomcat官网自行下载）
+3.运行  bin/startup.bat,
+http://localhost:8080/solr     可以访问。OK。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
+<meta property="og:title" content="solr从服务器配置整合到项目实战">
 <meta property="og:url" content="http://yoursite.com/2017/01/19/hello-world/index.html">
 <meta property="og:site_name" content="云米博客">
-<meta property="og:updated_time" content="2017-01-23T09:11:05.327Z">
+<meta property="og:description" content="一：下载solr，版本为5.2.1
+地址:http://pan.baidu.com/s/1eRAdk3o
+解压出来。
+1.在解压的文件夹路径： /server/webapps/solr.war
+2.放到 tomcat的 webapps 文件夹下（tomcat官网自行下载）
+3.运行  bin/startup.bat,
+http://localhost:8080/solr     可以访问。OK。">
+<meta property="og:updated_time" content="2017-01-23T12:35:37.634Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
+<meta name="twitter:title" content="solr从服务器配置整合到项目实战">
+<meta name="twitter:description" content="一：下载solr，版本为5.2.1
+地址:http://pan.baidu.com/s/1eRAdk3o
+解压出来。
+1.在解压的文件夹路径： /server/webapps/solr.war
+2.放到 tomcat的 webapps 文件夹下（tomcat官网自行下载）
+3.运行  bin/startup.bat,
+http://localhost:8080/solr     可以访问。OK。">
 
 
 
@@ -124,7 +145,7 @@
 
 
 
-  <title> Hello World | 云米博客 </title>
+  <title> solr从服务器配置整合到项目实战 | 云米博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -291,7 +312,7 @@
             
             
               
-                Hello World
+                solr从服务器配置整合到项目实战
               
             
           </h1>
@@ -329,8 +350,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo教程/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo教程</span>
+                  <a href="/categories/solr/" itemprop="url" rel="index">
+                    <span itemprop="name">solr</span>
                   </a>
                 </span>
 
@@ -358,7 +379,7 @@
 
           
           
-             <span id="/2017/01/19/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
+             <span id="/2017/01/19/hello-world/" class="leancloud_visitors" data-flag-title="solr从服务器配置整合到项目实战">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -385,7 +406,102 @@
       
 
       
-        
+        <p>一：下载solr，版本为5.2.1</p>
+<p>地址:<a href="http://pan.baidu.com/s/1eRAdk3o" target="_blank" rel="external">http://pan.baidu.com/s/1eRAdk3o</a></p>
+<p>解压出来。</p>
+<p>1.在解压的文件夹路径： /server/webapps/solr.war</p>
+<p>2.放到 tomcat的 webapps 文件夹下（tomcat官网自行下载）</p>
+<p>3.运行  bin/startup.bat,</p>
+<p><a href="http://localhost:8080/solr" target="_blank" rel="external">http://localhost:8080/solr</a>     可以访问。OK。</p>
+<p>二、配置solr</p>
+<p>1.进入tomcat下的项目路径：webapps/solr/WEB-INF/web.xml</p>
+<p>编辑修改，大约40行左右</p>
+<p>2.取消掉注释，输入要存放的配置位置，并对应创建文件夹</p>
+<p>3.把之前解压的文件夹打开： /server/solr ，文件夹下所有文件复制到我们新建的文件夹下</p>
+<ol>
+<li>复制解压的文件夹内 /server/lib/ext 下所有jar包 复制到 tomcat内 : /webapps/solr/WEB-INF/lib</li>
+</ol>
+<ol>
+<li><p>解压文件夹下  /server/resources/log4j.properties 复制到 tomcat内 : /webapps/solr/WEB-INF</p>
+</li>
+<li><p>解压文件夹下 /dist/solr-dataimporthandler-5.2.1.jar 复制到 tomcat内 : /webapps/solr/WEB-INF/lib</p>
+</li>
+</ol>
+<p>配置完成。启动 <a href="http://localhost:8080/solr" target="_blank" rel="external">http://localhost:8080/solr</a></p>
+<p>三、配置core</p>
+<p>项目保持启动</p>
+<p>1.解压文件夹下 /example/example-DIHsolr的 db文件夹 复制到我们创建的 solr_home 文件夹下</p>
+<p>2.控制面板添加core。点击 core admin</p>
+<p>name和instanceDir 改成文件夹名。然后 Add Core</p>
+<p>配置完成！</p>
+<p>四、新建项目调用测试。</p>
+<p>1.新建一个maven 项目</p>
+<p>pom.xml<br>复制代码</p>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"><br>    <modelversion>4.0.0</modelversion><br>    <groupid>com.masz.solr</groupid><br>    <artifactid>solrj</artifactid><br>    <version>0.0.1-SNAPSHOT</version><br><br>    <dependencies><br><br>        <dependency><br>            <groupid>org.apache.solr</groupid><br>            <artifactid>solr-solrj</artifactid><br>            <version>5.0.0</version><br>        </dependency><br><br>        <dependency><br>            <groupid>org.slf4j</groupid><br>            <artifactid>slf4j-simple</artifactid><br>            <version>1.5.6</version><br>        </dependency><br><br>        <dependency><br>            <groupid>javax.servlet</groupid><br>            <artifactid>servlet-api</artifactid><br>            <version>2.5</version><br>        </dependency><br>        <dependency><br>            <groupid>log4j</groupid><br>            <artifactid>log4j</artifactid><br>            <version>1.2.16</version><br>        </dependency><br>        <dependency><br>            <groupid>commons-logging</groupid><br>            <artifactid>commons-logging</artifactid><br>            <version>1.2</version><br>        </dependency><br><br>        <dependency><br>            <groupid>junit</groupid><br>            <artifactid>junit</artifactid><br>            <version>4.9</version><br>            <scope>compile</scope><br>        </dependency><br><br>    </dependencies><br><br></project>
+
+
+
+<p>2.测试代码</p>
+<p>SolrTest.java<br>复制代码</p>
+<p>import java.io.IOException;</p>
+<p>import org.apache.solr.client.solrj.SolrQuery;<br>import org.apache.solr.client.solrj.SolrServerException;<br>import org.apache.solr.client.solrj.impl.HttpSolrClient;<br>import org.apache.solr.client.solrj.response.QueryResponse;<br>import org.apache.solr.client.solrj.response.UpdateResponse;<br>import org.apache.solr.common.SolrDocument;<br>import org.apache.solr.common.SolrDocumentList;<br>import org.apache.solr.common.SolrInputDocument;<br>import org.junit.Before;<br>import org.junit.Test;</p>
+<p>public class SolrTest {</p>
+<pre><code>private static final String URL = &quot;http://127.0.0.1:8080/solr/db&quot;;
+
+private HttpSolrClient server = null;
+
+@Before
+public void init() {
+    // 创建 server
+    server = new HttpSolrClient(URL);
+}
+
+@Test
+public void addDoc() {
+
+    SolrInputDocument doc = new SolrInputDocument();
+
+    doc.addField(&quot;id&quot;, &quot;this is id&quot;);
+    doc.addField(&quot;title&quot;, &quot;this is document&quot;);
+
+    try {
+
+        UpdateResponse response = server.add(doc);
+        // 提交
+        server.commit();
+
+        System.out.println(&quot;########## Query Time :&quot; + response.getQTime());
+        System.out.println(&quot;########## Elapsed Time :&quot; + response.getElapsedTime());
+        System.out.println(&quot;########## Status :&quot; + response.getStatus());
+
+    } catch (SolrServerException | IOException e) {
+        System.err.print(e);
+    }
+}
+
+
+/**
+ * 查询
+ */
+@Test
+public void testQuery() {
+    String queryStr = &quot;*:*&quot;;
+    SolrQuery params = new SolrQuery(queryStr);
+    params.set(&quot;rows&quot;, 10);
+    try {
+        QueryResponse response = null;
+        response = server.query(params);
+        SolrDocumentList list = response.getResults();
+        System.out.println(&quot;########### 总共 ： &quot; + list.getNumFound() + &quot;条记录&quot;);
+        for (SolrDocument doc : list) {
+            System.out.println(&quot;######### id : &quot; + doc.get(&quot;id&quot;) + &quot;  title : &quot; + doc.get(&quot;title&quot;));
+        }
+    } catch (SolrServerException e) {
+        System.err.print(e);
+    }
+}
+</code></pre><p>}</p>
+
       
     </div>
 
@@ -408,7 +524,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hello/" rel="tag"># hello</a>
+            <a href="/tags/solr实战/" rel="tag"># solr实战</a>
           
         </div>
       
@@ -436,7 +552,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2017/01/19/hello-world/"
-           data-title="Hello World" data-url="http://yoursite.com/2017/01/19/hello-world/">
+           data-title="solr从服务器配置整合到项目实战" data-url="http://yoursite.com/2017/01/19/hello-world/">
       </div>
     
   </div>
